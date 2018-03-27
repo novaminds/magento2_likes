@@ -8,15 +8,15 @@ Features:
 This extension provide the adminestrator with the ability to know the most liked products,
 what kind of products a specific customer like and dislike.
 
-[alt text](images/likeGrid.png)
+![alt text](images/likeGrid.png)
 
 Customer can like a certain product in the product page or dislike it.
 
-[alt text](images/productLike.png)
+![alt text](images/productLike.png)
 
 the customer also can view his liked products list from his account page.
 
-[alt text](images/likedProductPage.png)
+![alt text](images/likedProductPage.png)
 
 Installation:
 
