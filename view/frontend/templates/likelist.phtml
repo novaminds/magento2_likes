@@ -1,0 +1,6 @@
+<?php
+$likedProducts = $this->getLikedProducts();
+
+foreach ($likedProducts as $p){
+    echo '<a href="#">' . $p->getProductId() . '</a>';
+}

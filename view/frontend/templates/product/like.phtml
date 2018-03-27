@@ -1,0 +1,57 @@
+<?php
+
+$customerSession = $this->getThisCustomer();
+$likeId = null;
+$productId = null;
+
+if($customerSession->isLoggedIn()) {
+
+    $productId = $this->getCurrentProduct();
+    $customerId = $customerSession->getCustomer()->getId();
+    $collection = $this->getLikeCollection();
+    $likes = $collection->addFieldToSelect('*')->addFieldToFilter('customer_id' , $customerId)
+                                              ->addFieldToFilter('product_id' , $productId);
+    $like = $collection->getFirstItem();
+    $likeId = $like->getLikeId();
+            
+            
+?>
+
+            <a href="#" onclick="sendLike()"
+               role="button">
+                <span id="likeButton"><?= ($like->getStatus() == 'like')? 'unlike' : 'like'?></span>
+            </a>
+
+<?php
+}
+
+?>
+
+<script type="text/javascript">
+    function sendLike(){
+        require(["jquery"],function($) {
+            $(document).ready(function() {
+                var customurl = "<?php echo $this->getUrl().'likes/like/save' ?>";
+                $.ajax({
+                    url: customurl,
+                    type: 'POST',
+                    dataType: 'json',
+                    data: {
+                        likeId: '<?= $likeId ?>',
+                        productId: '<?= $productId ?>'
+                    },
+                    complete: function(response) {  
+                        
+                        data = JSON.parse(response.responseText);
+                        document.getElementById("likeButton").innerHTML = data.message;   
+                    },
+                    error: function (xhr, status, errorThrown) {
+                        console.log('Error happens. Try again.');
+                    }
+                });
+            });
+        }); 
+    }
+    
+
+</script>

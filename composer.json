@@ -1,0 +1,21 @@
+{
+    "name": "novaminds/module-likes",
+    "description": "adding a custom product like button",
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "email": "info@mage2gen.com",
+            "name": "Mage2Gen"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "NovaMinds\\Likes\\": ""
+        }
+    }
+}

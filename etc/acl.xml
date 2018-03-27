@@ -1,0 +1,15 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Acl/etc/acl.xsd">
+	<acl>
+		<resources>
+			<resource id="Magento_Backend::admin">
+				<resource id="NovaMinds_Likes::like" sortOrder="10" title="like">
+					<resource id="NovaMinds_Likes::like_save" sortOrder="10" title="Save like"/>
+					<resource id="NovaMinds_Likes::like_delete" sortOrder="20" title="Delete like"/>
+					<resource id="NovaMinds_Likes::like_update" sortOrder="30" title="Update like"/>
+					<resource id="NovaMinds_Likes::like_view" sortOrder="40" title="View like"/>
+				</resource>
+			</resource>
+		</resources>
+	</acl>
+</config>

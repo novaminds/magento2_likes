@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="NovaMinds\Likes\Api\LikeRepositoryInterface" type="NovaMinds\Likes\Model\LikeRepository"/>
+	<preference for="NovaMinds\Likes\Api\Data\LikeInterface" type="NovaMinds\Likes\Model\Like"/>
+	<preference for="NovaMinds\Likes\Api\Data\LikeSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="NovaMinds\Likes\Model\ResourceModel\Like\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">novaminds_likes_like</argument>
+			<argument name="resourceModel" xsi:type="string">NovaMinds\Likes\Model\ResourceModel\Like\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="novaminds_likes_like_grid_data_source" xsi:type="string">NovaMinds\Likes\Model\ResourceModel\Like\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

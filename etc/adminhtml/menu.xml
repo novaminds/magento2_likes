@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="NovaMinds::top_level" module="NovaMinds_Likes" resource="Magento_Backend::content" parent="Magento_Backend::content" sortOrder="9999" title="Likes"/>
+		<add action="novaminds_likes/like/index" id="NovaMinds::novaminds_likes_like" module="NovaMinds_Likes" parent="NovaMinds::top_level" resource="Magento_Backend::content" sortOrder="9999" title="like"/>
+	</menu>
+</config>
+
+
+
