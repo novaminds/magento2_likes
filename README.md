@@ -18,12 +18,16 @@ the customer also can view his liked products list from his account page.
 
 ![alt text](images/likedProductPage.png)
 
+
+Note:
+Module namespace directory must be NovaMinds.
+If you face any problem, please tell us.
+
 Installation:
 
-To install our extension just put it in app/code directory, 
+To install our extension just put it in app/code/NovaMinds directory, 
 cd to your magento2 root directory and run magento command: 
 php bin/magento setup:upgrade
-
 
 License:
 
