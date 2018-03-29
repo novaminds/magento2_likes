@@ -21,7 +21,8 @@ the customer also can view his liked products list from his account page.
 
 Note:
 Module namespace directory must be NovaMinds.
-If you face any problem, please tell us.
+
+If you faced any problem, please tell us.
 
 Installation:
 
