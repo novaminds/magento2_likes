@@ -8,7 +8,7 @@ Features:
 This extension provide the adminestrator with the ability to know the most liked products,
 what kind of products a specific customer like and dislike.
 
-http://http://nmcit.com/magento2-likes-plugin/#img1
+http://http://nmcit.com/magento2-likes-plugin
 
 Customer can like a certain product in the product page or dislike it.
 
