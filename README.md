@@ -8,25 +8,27 @@ Features:
 This extension provide the adminestrator with the ability to know the most liked products,
 what kind of products a specific customer like and dislike.
 
-www.nmcit.com/magento2-likes-plugin/
+http://nmcit.com/wp-content/uploads/2018/03/likeGrid.png
+
 
 Customer can like a certain product in the product page or dislike it.
 
-www.nmcit.com/magento2-likes-plugin/
+http://nmcit.com/wp-content/uploads/2018/03/productLike.png
+
 
 the customer also can view his liked products list from his account page.
 
-www.nmcit.com/magento2-likes-plugin/
+http://nmcit.com/wp-content/uploads/2018/03/likedProductPage.png
 
 
 Note:
-Module namespace directory must be NovaMinds.
+namespace/Module directory must be NovaMinds/Likes.
 
 If you faced any problem, please tell us.
 
 Installation:
 
-To install our extension just put it in app/code/NovaMinds directory, 
+To install our extension just put it in app/code/NovaMinds/Likes directory, 
 cd to your magento2 root directory and run magento command: 
 php bin/magento setup:upgrade
 
