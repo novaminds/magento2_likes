@@ -8,17 +8,17 @@ Features:
 This extension provide the adminestrator with the ability to know the most liked products,
 what kind of products a specific customer like and dislike.
 
-http://nmcit.com/wp-content/uploads/2018/03/likeGrid.png
+www.nmcit.com/wp-content/uploads/2018/03/likeGrid.png
 
 
 Customer can like a certain product in the product page or dislike it.
 
-http://nmcit.com/wp-content/uploads/2018/03/productLike.png
+www.nmcit.com/wp-content/uploads/2018/03/productLike.png
 
 
 the customer also can view his liked products list from his account page.
 
-http://nmcit.com/wp-content/uploads/2018/03/likedProductPage.png
+www.nmcit.com/wp-content/uploads/2018/03/likedProductPage.png
 
 
 Note:
