@@ -13,12 +13,12 @@ what kind of products a specific customer like and dislike.
 
 Customer can like a certain product in the product page or dislike it.
 
-www.nmcit.com/wp-content/uploads/2018/03/productLike.png
+![alt text](http://www.nmcit.com/wp-content/uploads/2018/03/productLike.png)
 
 
 the customer also can view his liked products list from his account page.
 
-www.nmcit.com/wp-content/uploads/2018/03/likedProductPage.png
+![alt text](http://www.nmcit.com/wp-content/uploads/2018/03/likedProductPage.png)
 
 
 Note:
