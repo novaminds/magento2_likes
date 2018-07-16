@@ -5,7 +5,6 @@ $likeId = null;
 $productId = null;
 
 if($customerSession->isLoggedIn()) {
-
     $productId = $this->getCurrentProduct();
     $customerId = $customerSession->getCustomer()->getId();
     $collection = $this->getLikeCollection();
@@ -13,8 +12,7 @@ if($customerSession->isLoggedIn()) {
                                               ->addFieldToFilter('product_id' , $productId);
     $like = $collection->getFirstItem();
     $likeId = $like->getLikeId();
-            
-            
+                 
 ?>
 
             <a href="#" onclick="sendLike()"

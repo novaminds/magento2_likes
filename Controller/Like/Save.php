@@ -2,43 +2,46 @@
 namespace NovaMinds\Likes\Controller\Like;
 
 use \Magento\Catalog\Model\ProductRepository;
-use Magento\Framework\Controller\ResultFactory;
+use \Magento\Framework\Controller\ResultFactory;
 
 class Save extends \Magento\Framework\App\Action\Action
 
 {
+    protected $customerSession;
+    protected $product;
+    protected $like;
+    
+    public function __construct(
+        \Magento\Framework\App\Action\Context $context,
+        \Magento\Customer\Model\Session $customerSession,
+        \Magento\Catalog\Model\Product $product,
+        \NovaMinds\Likes\Model\Like $like
+    ){
+        parent::__construct($context);
+        $this->customerSession = $customerSession;
+        $this->product = $product;
+        $this->like = $like;
+    }
 
     public function execute()
     {
-
-        $objectManager = \Magento\Framework\App\ObjectManager::getInstance();
-        $customerSession = $objectManager->get('Magento\Customer\Model\Session');
-        
-        $productId = $this->getRequest()->getParam('productId');
-        
-        $product = $objectManager->get('Magento\Catalog\Model\Product')->load($productId);
-        
-        $customerId = $customerSession->getCustomer()->getId();
-        
-        $like = $this->_objectManager->create('NovaMinds\Likes\Model\Like');
-        
+        $productId = $this->getRequest()->getParam('productId');        
+        $product = $this->product->load($productId);        
+        $customerId = $this->customerSession->getCustomer()->getId();
+  
         $likeId = $this->getRequest()->getParam('likeId');
-        
-        
         if($likeId == null){
-            $like->setCustomerId($customerId);
-            $like->setProductId($productId);
-            $like->setStatus('like');
+            $this->like->setCustomerId($customerId);
+            $this->like->setProductId($productId);
+            $this->like->setStatus('like');
         }else{
-            $like->load($likeId);
-            ($like->getStatus() == 'like')? $like->setStatus('unlike') : $like->setStatus('like');
+            $this->like->load($likeId);
+            ($this->like->getStatus() == 'like')? $this->like->setStatus('unlike') : $this->like->setStatus('like');
         }
-       
-       
-//        
+                   
         try {
 
-            $like->save();
+            $this->like->save();
             
         } catch (\Magento\Framework\Exception\LocalizedException $e) {
             $this->messageManager->addError($e->getMessage());
@@ -49,7 +52,7 @@ class Save extends \Magento\Framework\App\Action\Action
         }
         
         $resultJson = $this->resultFactory->create(ResultFactory::TYPE_JSON);
-        $resultJson->setData(['message' => ($like->getStatus() == 'like')? 'unlike' : 'like']);
+        $resultJson->setData(['message' => ($this->like->getStatus() == 'like')? 'unlike' : 'like']);
         return $resultJson;
 
     }

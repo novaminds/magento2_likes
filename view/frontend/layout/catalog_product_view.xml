@@ -3,7 +3,7 @@
     <body>
         <referenceContainer name="product.info.main" >
             <block class="NovaMinds\Likes\Block\Product\Like"
-                   template="NovaMinds_Likes::product/like.phtml" name="product.like">
+                   template="NovaMinds_Likes::product/like.phtml" name="product.like" cacheable="false">
             </block>
         </referenceContainer>
     </body>
